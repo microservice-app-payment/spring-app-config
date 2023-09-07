@@ -11,6 +11,9 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
+  # Zipkin
+  zipkin:
+    base-url: ${ZIPKIN_URL:http://localhost:9411}
 server:
   port: 8082
 

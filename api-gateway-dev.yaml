@@ -5,6 +5,10 @@ spring:
     name: api-gateway
   #  config:
   #    import: configserver:http://${CONFIG_URL:localhost}:9000
+
+  # Zipkin
+  zipkin:
+    base-url: ${ZIPKIN_URL:http://localhost:9411}
   cloud:
     gateway:
       routes:
