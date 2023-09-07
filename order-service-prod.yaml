@@ -1,0 +1,15 @@
+# Custom Eureka Discovery Service
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: on
+    fetch-registry: on
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_ADDRESS:localhost}:8000/eureka
+
+# Custom Okta Security
+okta:
+  oauth2:
+    issuer: https://dev-23099275.okta.com/oauth2/default
+    audience: api://default
