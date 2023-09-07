@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/payment-service-db
+    username: root
+    password: Ngochung1809!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: off
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8082
+
+# Custom Eureka Discovery Service
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: on
+    fetch-registry: on
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_ADDRESS:localhost}:8000/eureka
+
+# Custom Okta Security
+okta:
+  oauth2:
+    issuer: https://dev-23099275.okta.com/oauth2/default
+    audience: api://default

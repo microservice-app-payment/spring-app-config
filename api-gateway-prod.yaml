@@ -3,8 +3,8 @@ server:
 spring:
   application:
     name: api-gateway
-  config:
-    import: configserver:http://${CONFIG_URL:localhost}:9000
+  #  config:
+  #    import: configserver:http://${CONFIG_URL:localhost}:9000
   cloud:
     gateway:
       routes:
@@ -59,3 +59,13 @@ okta:
     client-id: 0oab2e71rnZHgiMP85d7
     client-secret: Dk_QOlRLry75M56v_umogOtUkJE2FslNcHt3J32M4_3Nh9g1rrM_jINj6gPrFB5r
     scopes: openid, profile, email, offline_access
+
+# Custom Eureka Discovery Service
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: on
+    fetch-registry: on
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_ADDRESS:localhost}:8000/eureka

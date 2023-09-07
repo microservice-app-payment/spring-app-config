@@ -3,8 +3,8 @@ server:
 spring:
   application:
     name: api-gateway
-#  config:
-#    import: configserver:http://${CONFIG_URL:localhost}:9000
+  #  config:
+  #    import: configserver:http://${CONFIG_URL:localhost}:9000
   cloud:
     gateway:
       routes:
